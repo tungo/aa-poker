@@ -15,13 +15,13 @@ describe Card do
 end
 
 describe Deck do
-  subject(:deck){ Deck.new }
+  subject(:deck) { Deck.new }
 
   describe "#initialize" do
 
     it "contain an array of 52 cards" do
       expect(deck.cards.size).to eq(52)
-      expect(deck.cards.sample.class).to eq(Card)
+      expect(deck.cards.sample.is_a?(Card)).to be true
     end
 
 
