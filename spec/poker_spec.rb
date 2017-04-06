@@ -1,5 +1,4 @@
-require "rspec"
-require "card"
+require 'requires'
 
 describe Card do
   subject(:card) { Card.new('A', :spade) }
@@ -12,5 +11,21 @@ describe Card do
     it "set the suit" do
       expect(card.suit).to eq(:spade)
     end
+  end
+end
+
+describe Deck do
+  subject(:deck){ Deck.new }
+
+  describe "#initialize" do
+
+    it "contain an array of 52 cards" do
+      expect(deck.cards.size).to eq(52)
+      expect(deck.cards.sample.class).to eq(Card)
+    end
+
+
+
+
   end
 end
